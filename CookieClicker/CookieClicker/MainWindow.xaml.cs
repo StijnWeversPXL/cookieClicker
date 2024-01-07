@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace CookieClicker
 {
@@ -21,12 +22,13 @@ namespace CookieClicker
         private int cookieCount;
         private int cookiesPerClick;
         private int cookiesPerSecond;
-
+        
 
         private Dictionary<string, double> basePrices;
         private Dictionary<string, double> investmentPrice;
         private Dictionary<string, int> investmentCount;
 
+        private Random random;
 
         public static class NumberFormatter
         {
@@ -84,7 +86,25 @@ namespace CookieClicker
             // Cookies per seconde
             Thread t = new Thread(GenerateCookiesPerSecond);
             t.Start();
+
+            // Golden cookies timer
+            Thread goldenCookieThread = new Thread(GenerateGoldenCookies);
+            goldenCookieThread.Start();
         }
+        private void GenerateGoldenCookies()
+        {
+            while (true)
+            {
+               
+                if (random.NextDouble() < 0.3)
+                {
+                    double goldenCookie = cookiesPerSecond * 15 * 60;
+                }
+
+                Thread.Sleep(random.Next(1000, 5000));
+            }
+        }
+      
 
         private double CalculatePrice(string investmentName)
         {
