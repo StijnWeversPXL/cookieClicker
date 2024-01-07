@@ -7,23 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="grid">
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*" SharedSizeGroup="A"/>
             <ColumnDefinition  Width="*" SharedSizeGroup="A"/>
             <ColumnDefinition  Width="*" SharedSizeGroup="A"/>
         </Grid.ColumnDefinitions>
         <Button Content="🍪" FontSize="20" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="CookieButton_Click"/>
-        <Label x:Name="clickCountLabel" Content="Klikken: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
-        <Label Content="Cookies per seconde: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,30"/>
-        <Label x:Name="cpsLabel" Content="Cookies per seconde: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60"/>
-        <Button Content="Cursor" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,106,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
-        <Button Content="Grandma" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,167,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
-        <Button Content="Farm" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,217,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
-        <Button Content="Mine" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,272,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
-        <Button Content="Factory" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,325,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
-        <Label x:Name="cookiePriceLabel" Content="" />
-        
+        <Label x:Name="clickCountLabel" Content="Klikken: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,29,0,0"/>
+        <Label Content="Cookies per seconde: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,47,0,0" RenderTransformOrigin="0.509,1.879"/>
+        <Label x:Name="cpsLabel" Content="Cookies per seconde: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,78,0,0"/>
+        <Button Content="Cursor" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,36,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Button Content="Grandma" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,92,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Button Content="Farm" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,147,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Button Content="Mine" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,205,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Button Content="Factory" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,263,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Button Content="Bank" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,314,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Button Content="Temple" Width="150" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,364,0,0" Click="InvestmentButton_Click" Grid.Column="2"/>
+        <Label x:Name="cookiePriceLabel" Content="PXL-Bakery" />
+
 
     </Grid>
 </Window>
