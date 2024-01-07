@@ -28,6 +28,27 @@ namespace CookieClicker
         private Dictionary<string, int> investmentCount;
 
 
+        public static class NumberFormatter
+        {
+            public static string FormatNumber(double number)
+            {
+                string[] suffixes = { "", "Miljoen", "Miljard", "Biljoen", "Biljard", "Triljoen" };
+
+                int suffixIndex = 0;
+
+                while (number >= 1000.0 && suffixIndex < suffixes.Length - 1)
+                {
+                    number /= 1000.0;
+                    suffixIndex++;
+                }
+
+                // Voeg een if-else controle toe voor de afronding
+                double roundedNumber = (number >= 1_000_000.0) ? Math.Round(number, 3) : Math.Round(number, 0);
+
+                return $"{roundedNumber:F3} {suffixes[suffixIndex]}";
+            }
+        }
+
 
         public MainWindow()
         {
@@ -46,7 +67,7 @@ namespace CookieClicker
             string cookieKey = "🍪";
             double cookiePrice = basePrices[cookieKey];
 
-            cookiePriceLabel.Content = $"De prijs van {cookieKey} is {cookiePrice}";
+            cookiePriceLabel.Content = $"De prijs van 🍪 is {cookiePrice}";
             investmentPrice = new Dictionary<string, double>(basePrices);
             investmentCount = new Dictionary<string, int>();
 

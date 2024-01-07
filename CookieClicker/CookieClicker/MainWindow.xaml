@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="grid">
-        <Grid.Background>
-            <ImageBrush ImageSource="/cookieClicker.png"  Stretch="UniformToFill" />
-        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*" SharedSizeGroup="A"/>
             <ColumnDefinition  Width="*" SharedSizeGroup="A"/>
