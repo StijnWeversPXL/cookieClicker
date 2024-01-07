@@ -45,7 +45,15 @@ namespace CookieClicker
                 // Voeg een if-else controle toe voor de afronding
                 double roundedNumber = (number >= 1_000_000.0) ? Math.Round(number, 3) : Math.Round(number, 0);
 
-                return $"{roundedNumber:F3} {suffixes[suffixIndex]}";
+                string formattedNumber = $"{roundedNumber:F3} {suffixes[suffixIndex]}";
+
+                if (roundedNumber < 1_000_000.0 && roundedNumber >= 1000.0)
+                {
+                    int spaceIndex = formattedNumber.IndexOf('.') - 1;
+                    formattedNumber = formattedNumber.Insert(spaceIndex, " ");
+                }
+
+                return formattedNumber;
             }
         }
 
