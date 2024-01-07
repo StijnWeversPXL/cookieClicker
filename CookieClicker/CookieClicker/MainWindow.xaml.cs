@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,7 @@ namespace CookieClicker
         private Dictionary<string, int> investmentCount;
 
         private Random random;
+        private List<Quest> quests;
 
         public static class NumberFormatter
         {
@@ -90,6 +92,44 @@ namespace CookieClicker
             // Golden cookies timer
             Thread goldenCookieThread = new Thread(GenerateGoldenCookies);
             goldenCookieThread.Start();
+
+            hiddenQuests();
+        }
+        private void hiddenQuests()
+        {
+            quests = new List<Quest>
+            {
+                new Quest("koop 10 Grandmas", "Grandma", 10),
+                new Quest("koop 20 Grandmas", "Grandma", 20),
+                new Quest("klik 10 cookies", "🍪", 10),
+                new Quest("klik 50 cookies", "🍪", 50),
+                new Quest("klik 1000 cookies", "🍪", 1000),
+                new Quest("vind een golden cookie", GenerateGoldenCookies(), 1),
+                new Quest("koop 10 farms", "Farm", 10),
+                new Quest("koop 10 mines", "Mine", 10),
+                new Quest("koop 10 factories", "Factory", 10),
+                new Quest("koop 10 Banks", "Bank", 10),
+                new Quest("koop 10 Temples", "Temple", 10),
+                new Quest("koop 20 farms", "Farm", 20),
+                new Quest("koop 20 mines", "Mine", 20),
+                new Quest("koop 20 factories", "Factory", 20),
+                new Quest("koop 20 banks", "Bank", 20),
+                new Quest("koop 20 temples", "Temple", 20),
+                new Quest("klik 10000 cookies", "🍪", 10000),
+                new Quest("klik 100000 cookies", "🍪", 100000),
+                new Quest("klik 100000 cookies", "🍪", 100000),
+                new Quest("klik 100000 cookies", "🍪", 100000),
+                new Quest("klik 100000 cookies", "🍪", 100000),
+            
+            };
+            foreach (var quest in quests)
+            {
+                quest.QuestCompleted += QuestCompleted;
+            }
+        }
+        private void QuestCompleted()
+        {
+            MessageBox.Show("Proficiat! Je hebt een hidden quest voltooid!")
         }
         private void GenerateGoldenCookies()
         {
