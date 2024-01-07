@@ -56,7 +56,7 @@ namespace CookieClicker
                 return formattedNumber;
             }
         }
-
+        
 
         public MainWindow()
         {
@@ -69,7 +69,9 @@ namespace CookieClicker
                 { "Grandma", 100 },
                 { "Farm", 1100 },
                 { "Mine", 12000 },
-                { "Factory", 130000 }
+                { "Factory", 130000 },
+                { "Bank", 1400000 },
+                { "Temple", 20000000 }
             };
 
             string cookieKey = "🍪";
@@ -169,8 +171,12 @@ namespace CookieClicker
                     return 47;
                 case "Factory":
                     return 260;
+                case "Bank":
+                    return 1400;
+                case "Temple":
+                    return 7800;
                 default:
-                    return 0;
+                        return 0;
             }
         }
 
